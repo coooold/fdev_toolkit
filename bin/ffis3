@@ -1,0 +1,4 @@
+. $(dirname $0)/../base.sh
+docker run --rm \
+    -v $PWD:$PWD \
+    fdev/fis3:latest sh -c "cd $PWD; fis3 $ARGS"
