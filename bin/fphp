@@ -1,4 +1,5 @@
 . $(dirname $0)/../base.sh
 docker run --rm \
     -v $PWD:$PWD \
+    --net=host \
     fdev/php:latest  sh -c "cd $PWD; php $ARGS"

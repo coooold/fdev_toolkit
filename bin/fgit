@@ -1,5 +1,6 @@
 . $(dirname $0)/../base.sh
 docker run --rm \
     -v $PWD:$PWD \
+    -net=host \
     -v ~/.ssh:/root/.ssh \
     fdev/git:latest sh -c "cd $PWD; git $ARGS"
