@@ -1,0 +1,15 @@
+. $(dirname $0)/../base.sh
+docker run --rm \
+    -d \
+    -v $PWD:/data \
+    --net=host \
+    --name="php-fpm" \
+    fdev/php:latest  sh -c "php-fpm7 -y /data/conf/php-fpm.conf -R -F"
+
+docker run --rm \
+    -v $PWD:/data \
+    -d \
+    --net=host \
+    --name="nginx" \
+    fdev/nginx:latest  sh -c "nginx -c /data/conf/nginx.conf  -g 'daemon off;'"
+
