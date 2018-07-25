@@ -1,7 +1,7 @@
 # build the tengine image.
 DOCKER=docker
 VERSION=latest
-IMAGE=fdev/nginx
+IMAGE=fdev/nginx-php
 build:
 	docker build -t ${IMAGE}:${VERSION} .
 
@@ -9,7 +9,7 @@ push:
 	docker push ${IMAGE}:${VERSION}
 
 test:
-	${DOCKER} run --rm -it ${IMAGE}:${VERSION} sh
+	${DOCKER} run --rm -it ${IMAGE}:${VERSION}
 
 rmi:
 	docker rmi ${IMAGE}:${VERSION}
