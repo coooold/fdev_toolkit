@@ -1,0 +1,6 @@
+. $(dirname $0)/../base.sh
+docker run --rm \
+    -v $PWD:/data \
+    --net=host \
+    fdev/nginx:latest  sh -c "nginx -c /data/conf/nginx.conf  -t"
+
