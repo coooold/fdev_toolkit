@@ -1,8 +1,5 @@
 export MYSQL_ALLOW_EMPTY_PASSWORD=yes
-docker run --rm \
+docker exec \
     -ti \
-    --net=host \
-    -v /data/mysql:/var/lib/mysql \
-    -v /data/mysql/run:/var/run/mysqld \
-    mysql:5.6 \
+    mysqldb \
     mysql
