@@ -4,8 +4,8 @@ docker run --rm \
     --name mysqldb \
     --net=host \
     -e MYSQL_ALLOW_EMPTY_PASSWORD=${MYSQL_ALLOW_EMPTY_PASSWORD} \
-    -v $PWD/mysql:/var/lib/mysql \
-    -v $PWD/mysql/run:/var/run/mysqld \
+    -v /data/mysql:/var/lib/mysql \
+    -v /data/mysql/run:/var/run/mysqld \
     -d \
     mysql:5.6 \
     --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci 
