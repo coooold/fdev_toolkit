@@ -1,7 +1,7 @@
 # build the tengine image.
 DOCKER=docker
 VERSION=latest
-IMAGE=fdev/nginx-php
+IMAGE=fdev/nginx
 build:
 	docker build -t ${IMAGE}:${VERSION} .
 
